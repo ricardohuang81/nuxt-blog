@@ -83,6 +83,6 @@ a {
 
 a:hover .post-content,
 a:active .post-content {
-  background-color: #ccc;
+  background-color: #7FFFD4;
 }
 </style>
