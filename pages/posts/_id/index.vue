@@ -15,30 +15,17 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   asyncData(context) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          loadedPost: { 
-              id: '1', 
-              title: "LiNing D-Wades (ID: " + context.route.params.id + ")", 
-              previewText: 'LiNing D-Wades', 
-              author: 'Ricardo',
-              updatedDate: new Date(),
-              content: 'YOLO coloring book whatever viral truffaut dreamcatcher. Kickstarter craft beer small batch whatever before they sold out coloring book. Tacos jean shorts jianbing neutra, chicharrones yr health goth narwhal meggings pabst cray. Subway tile chillwave narwhal selfies, lyft marfa skateboard helvetica biodiesel fingerstache. Messenger bag gentrify truffaut enamel pin unicorn.',
-              thumbnail: 'https://stockx.imgix.net/Li-Ning-Way-Of-Wade-6-The-Edition-Boutique-Art-Basel.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1538080256&w=400'
-          }
-        })
-      }, 1000)
-    })
-    .then(data => {
-      return data
-    })
-    .catch(e => {
-      context.error(new Error())
-    })
+    return axios.get('https://online-auction-nuxt.firebaseio.com/posts/' + context.params.id + '.json')
+      .then(res => {
+        return {
+          loadedPost: res.data
+        }
+      })
+      .catch(e => context.error(e))
   }
 }
 
