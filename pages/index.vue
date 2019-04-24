@@ -9,13 +9,9 @@
 
 
 <script>
-import PostList from '@/components/Posts/PostList';
 // const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 export default {
-  components: {
-    PostList
-  },
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts

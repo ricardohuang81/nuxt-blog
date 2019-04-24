@@ -28,20 +28,27 @@ export default {
   ** Global CSS
   */
   css: [
+    '~assets/styles/main.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios'
   ],
-
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://online-auction-nuxt.firebaseio.com',
+    credentials: false
+  },
   /*
   ** Build configuration
   */
@@ -54,5 +61,9 @@ export default {
   },
   env: {
     baseUrl: process.env.BASE_URL || 'https://online-auction-nuxt.firebaseio.com'
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }

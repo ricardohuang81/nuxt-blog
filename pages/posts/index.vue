@@ -5,13 +5,9 @@
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList';
 // const snooze = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 export default {
-    components: {
-        PostList
-    },
     // fetch(context) {
     //     // if (context.store.state.loadedPosts.length > 0) {
     //     //     return null;
