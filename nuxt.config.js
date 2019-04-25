@@ -60,10 +60,14 @@ export default {
     }
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'https://online-auction-nuxt.firebaseio.com'
+    baseUrl: process.env.BASE_URL || 'https://online-auction-nuxt.firebaseio.com',
+    fbAPIKey: 'AIzaSyB-WCZs6owrcu9nppD_ddMIpwb2bK4jZ1A'
   },
   transition: {
     name: 'fade',
     mode: 'out-in'
-  }
+  },
+  // router: {
+  //   middleware: 'log'
+  // }
 }

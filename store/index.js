@@ -1,8 +1,10 @@
-import Vuex from 'vuex';
+// import Vuex from 'vuex';
+import Cookie from 'js-cookie';
 
-export const state = () => {
-    loadedPosts: []
-}
+export const state = () => ({
+    loadedPosts: [],
+    token: null
+})
 
 export const mutations = {
     setPosts(state, posts) {
@@ -14,6 +16,12 @@ export const mutations = {
     editPost(state, editedPost) {
         const postIndex = state.loadedPosts.findIndex(post => post.id === editedPost.id);
         state.loadedPosts[postIndex] = editedPost
+    },
+    setToken(state, token) {
+        state.token = token
+    },
+    clearToken(state) {
+        state.token = null
     }
 }
 
@@ -36,7 +44,7 @@ export const actions = {
             updatedDate: new Date()
         }
         return this.$axios
-            .$post('/posts.json', createdPost)
+            .$post('/posts.json?auth=' + vuexContext.state.token, createdPost)
             .then(data => {
                 vuexContext.commit('addPost', { ...createdPost, id: data.name })
             })
@@ -44,19 +52,73 @@ export const actions = {
     },
     editPost(vuexContext, editedPost) {
         return this.$axios
-            .$put('/posts/' + editedPost.id + '.json', editedPost)
+            .$put('/posts/' + editedPost.id + '.json?auth=' + vuexContext.state.token, editedPost)
             .then(res => {
                 vuexContext.commit('editPost', editedPost)
             })
             .catch(e => console.log('[e]', e))
     },
     setPosts(vuexContext, posts) {
-        vuexContext.commit('setPosts', postsArray)
+        vuexContext.commit('setPosts', posts)
+    },
+    authenticateUser(vuexContext, authData) {
+        let authUrl = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + process.env.fbAPIKey
+        if (!authData.isLogin) {
+            authUrl = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=' + process.env.fbAPIKey
+        }
+        return this.$axios.$post(authUrl, {
+            email: authData.email,
+            password: authData.password,
+            returnSecureToken: true
+        }).then(result => {
+            vuexContext.commit('setToken', result.idToken);
+            localStorage.setItem('token', result.idToken)
+            localStorage.setItem('tokenExpiration', new Date().getTime() + Number.parseInt(result.expiresIn) * 1000)
+            Cookie.set('jwt', result.idToken);
+            Cookie.set('expirationDate', new Date().getTime() + Number.parseInt(result.expiresIn) * 1000);
+        })
+        .catch(error => console.log('[error]', error))
+    },
+    initAuth(vuexContext, req) {
+        let token;
+        let expirationDate;
+        if (req) {
+            if (!req.headers.cookie) {
+                return;
+            }
+            const jwtCookie = req.headers.cookie.split(';').find(coke => coke.trim().startsWith('jwt='));
+            if (!jwtCookie) {
+                return;
+            }
+            token = jwtCookie.split('=')[1];
+            expirationDate = req.headers.cookie.split(';').find(coke => coke.trim().startsWith('expirationDate=').split('=')[1]);
+        } else {
+            token = localStorage.getItem('token');
+            expirationDate = localStorage.getItem('tokenExpiration');
+        }
+        if (new Date().getTime() > +expirationDate || !token) {
+            console.log('No token or Invalid token');
+            vuexContext.dispatch('logout');
+            return;
+        }
+        vuexContext.commit('setToken', token)
+    },
+    logout(vuexContext) {
+        vuexContext.commit('clearToken');
+        Cookie.remove('jwt');
+        Cookie.remove('expirationDate');
+        if (process.client) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('tokenExpiration');
+        }
     }
 }
 
 export const getters = {
     loadedPosts(state) {
         return state.loadedPosts
+    },
+    isAuthenticated(state) {
+        return state.token != null
     }
 }

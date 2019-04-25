@@ -20,6 +20,7 @@ export default {
     //         context.error(new Error())
     //     })
     // },
+    middleware: 'log',
     computed: {
         loadedPosts() {
             return this.$store.getters.loadedPosts
