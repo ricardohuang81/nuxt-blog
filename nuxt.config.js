@@ -1,4 +1,5 @@
-import pkg from './package'
+// import pkg from './package'
+const bodyParser = require('body-parser')
 
 export default {
   mode: 'universal',
@@ -70,4 +71,8 @@ export default {
   // router: {
   //   middleware: 'log'
   // }
+  serverMiddleware: [
+    bodyParser.json(),
+    '~/api'
+  ]
 }
