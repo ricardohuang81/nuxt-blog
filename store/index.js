@@ -93,7 +93,7 @@ export const actions = {
             }
             token = jwtCookie.split('=')[1];
             expirationDate = req.headers.cookie.split(';').find(coke => coke.trim().startsWith('expirationDate=').split('=')[1]);
-        } else {
+        } else if (process.client) {
             token = localStorage.getItem('token');
             expirationDate = localStorage.getItem('tokenExpiration');
         }
