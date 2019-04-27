@@ -1,6 +1,9 @@
-# basic-nuxt-blog
+# nuxt-sneaker-auc
 
 > MaxS Nuxt Blog
+
+## deployments
+
 
 ## Build Setup
 
