@@ -4,8 +4,8 @@
 
 ## deployments (ZEIT Now, Netlify, Surge.sh)
 
-> https://sneaker-auc.netlify.com/
-> https://streetwear-auc.surge.sh/
+# https://sneaker-auc.netlify.com/
+# https://streetwear-auc.surge.sh/
 
 ## Build Setup
 
