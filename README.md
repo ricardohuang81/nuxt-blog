@@ -2,10 +2,10 @@
 
 > MaxS Nuxt Blog
 
-## deployments (ZEIT Now, Netlify, Surge.sh)
-
-# https://sneaker-auc.netlify.com/
-# https://streetwear-auc.surge.sh/
+## deployments (ZEIT Now, Netlify, Surge)
+* https://blog-nuxt.ricardojames51.now.sh/
+* https://sneaker-auc.netlify.com/
+* https://streetwear-auc.surge.sh/
 
 ## Build Setup
 
