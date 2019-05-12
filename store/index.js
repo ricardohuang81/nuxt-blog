@@ -76,7 +76,7 @@ export const actions = {
             localStorage.setItem('tokenExpiration', new Date().getTime() + Number.parseInt(result.expiresIn) * 1000)
             Cookie.set('jwt', result.idToken);
             Cookie.set('expirationDate', new Date().getTime() + Number.parseInt(result.expiresIn) * 1000);
-            return this.$axios.$post('http://localhost:3000/api/track-data', { data: 'Authenticated' })
+            return this.$axios.$post('http://localhost:3000/api/track-data', { data: 'Be Authenticated!!' })
         })
         .catch(error => console.log('[error]', error))
     },
@@ -92,7 +92,7 @@ export const actions = {
                 return;
             }
             token = jwtCookie.split('=')[1];
-            expirationDate = req.headers.cookie.split(';').find(coke => coke.trim().startsWith('expirationDate=').split('=')[1]);
+            expirationDate = req.headers.cookie.split(';').find(coke => coke.trim().startsWith('expirationDate=')).split('=')[1];
         } else if (process.client) {
             token = localStorage.getItem('token');
             expirationDate = localStorage.getItem('tokenExpiration');

@@ -1,7 +1,7 @@
 <template>
     <div class="admin-page">
         <section class="new-post">
-            <AppButton @click="$router.push('/admin/new-post')">Create Auction</AppButton>
+            <AppButton @click="$router.push('/admin/new-post')">New Auction</AppButton>
             <AppButton style="margin-left: 10px" @click="onLogout">Logout</AppButton>
         </section>
         <section class="existing-posts">

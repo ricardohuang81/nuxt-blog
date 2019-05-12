@@ -3,13 +3,13 @@
         <section class="post">
             <h1 class="post-title">{{ loadedPost.title }}</h1>
             <div class="post-details">
-                <div class="post-detail">Last Updated on {{ loadedPost.updatedDate | date }}</div>
-                <div class="post-detail">Written By {{ loadedPost.author }}</div>
+                <div class="post-detail">Born on {{ loadedPost.updatedDate | date }}</div>
+                <div class="post-detail">Posted By {{ loadedPost.author }}</div>
             </div>
             <p class="post-content">{{ loadedPost.content }}</p>
         </section>
         <section class="post-feedback">
-            <p class="post-content">Let me know what you think about this post, send an email to <a href="mailto:feedback@my-sick-domain.com">feedback@my-sick-domain.com</a>.</p>
+            <p class="post-content">How much do you want to bid? Send an email to <a href="mailto:feedback@flipping-supreme.com">feedback@flipping-supreme.com</a></p>
         </section>
     </div>
 </template>

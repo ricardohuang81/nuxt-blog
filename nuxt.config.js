@@ -9,7 +9,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Sneaker Auction',
+    title: "Flippin' Supreme",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +24,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#EE82EE', height: '4px', duration: 5000 },
+  loading: { color: 'red', height: '4px', duration: 5000 },
 
   /*
   ** Global CSS

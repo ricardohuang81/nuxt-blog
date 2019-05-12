@@ -28,7 +28,7 @@ export default {
 
 <style>
 html {
-  font-family: 'Indie Flower', cursive;
+  font-family:'Courier New', Courier, monospace;
 }
 body {
   margin: 0;
