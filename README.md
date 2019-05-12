@@ -1,6 +1,12 @@
-# basic-nuxt-blog
+# nuxt-sneaker-auc
 
 > MaxS Nuxt Blog
+
+## deployments (ZEIT Now, Netlify, Surge)
+
+* https://blog-nuxt.ricardojames51.now.sh/
+* https://sneaker-auc.netlify.com/
+* https://streetwear-auc.surge.sh/
 
 ## Build Setup
 
