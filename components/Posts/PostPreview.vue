@@ -49,7 +49,8 @@ export default {
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px #ccc;
   background-color: white;
-  width: 90%;
+  width: 70%;
+  margin: 20px;
 }
 
 .post-preview h1,
@@ -64,14 +65,14 @@ a {
 
 @media (min-width: 850px) {
   .post-preview {
-    width: 400px;
-    margin: 10px;
+    width: 320px;
+    margin: 40px;
   }
 }
 
 .post-thumbnail {
   width: 100%;
-  height: 200px;
+  height: 240px;
   background-position: center;
   background-size: cover;
 }

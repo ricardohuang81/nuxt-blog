@@ -1,7 +1,8 @@
 <template>
   <div class="home-page">
     <section class="intro">
-      <h1>Flippin' Supreme</h1>
+      <!-- <h1>Flippin' Supreme</h1> -->
+      <img src="../assets/images/Supreme-Logo-Red-White-01.jpg">
     </section>
     <PostList :posts="loadedPosts" />
   </div>
@@ -25,32 +26,38 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/flight-club.jpg');
-  background-position: center;
-  background-size: cover;
+  background-color: #778899;
 }
 
-.intro h1 {
+.intro img {
+  display: block;
+  height: 92%;
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+/* .intro h1 {
   text-align: center;
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 5%;
   width: 90%;
   font-size: 1.5rem;
-  color: black;
-  background-color: rgb(211, 211, 211);
+  color: #FF0000;
+  background-color: #fff;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 3px 3px 3px black;
   box-sizing: border-box;
   border: 1px solid black;
-}
+} */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .intro h1 {
     font-size: 2rem;
   }
-}
+} */
 
 .featured-posts {
   display: flex;
