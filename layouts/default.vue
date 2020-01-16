@@ -1,9 +1,9 @@
 <template>
   <div>
     <TheHeader @sidenavToggle="displaySidenav = !displaySidenav" />
-    <TheSidenav 
-      :show="displaySidenav" 
-      @close="displaySidenav = false"  
+    <TheSidenav
+      :show="displaySidenav"
+      @close="displaySidenav = false"
     />
     <nuxt />
   </div>
@@ -27,10 +27,8 @@ export default {
 </script>
 
 <style>
-html {
-  font-family:'Courier New', Courier, monospace;
-}
 body {
+  font-family: 'Indie Flower', cursive;
   margin: 0;
 }
 </style>

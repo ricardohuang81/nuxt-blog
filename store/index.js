@@ -1,4 +1,3 @@
-// import Vuex from 'vuex';
 import Cookie from 'js-cookie';
 
 export const state = () => ({

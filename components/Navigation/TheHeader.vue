@@ -3,13 +3,13 @@
   <header class="the-header">
     <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
     <div class="logo">
-      <nuxt-link to="/">Flipping Supreme</nuxt-link>
+      <nuxt-link to="/">Streetwear Blog</nuxt-link>
     </div>
     <div class="spacer"></div>
     <div class="navigation-items">
       <ul class="nav-list">
         <li class="nav-item"><nuxt-link to="/about">About</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/posts">My Auctions</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/posts">Blog Posts</nuxt-link></li>
         <li class="nav-item"><nuxt-link to="/admin">Sign-in/Register</nuxt-link></li>
       </ul>
     </div>

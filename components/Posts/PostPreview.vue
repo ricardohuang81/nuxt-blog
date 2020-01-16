@@ -1,8 +1,8 @@
 <template>
   <nuxt-link :to="postLink"  class="post-preview">
     <article>
-      <div 
-        class="post-thumbnail" 
+      <div
+        class="post-thumbnail"
         v-bind:style="{backgroundImage: 'url(' + thumbnail + ')'}"></div>
       <div class="post-content"></div>
         <h1>{{ title }}</h1>

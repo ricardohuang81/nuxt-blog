@@ -5,10 +5,8 @@
 </template>
 
 <style>
-html {
-  font-family:'Courier New', Courier, monospace;
-}
 body {
+  font-family: 'Indie Flower', cursive;
   margin: 0;
 }
 </style>

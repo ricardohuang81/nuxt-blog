@@ -1,12 +1,12 @@
 <template>
     <div class="admin-page">
         <section class="new-post">
-            <AppButton @click="$router.push('/admin/new-post')">New Auction</AppButton>
+            <AppButton @click="$router.push('/admin/new-post')">New Blog</AppButton>
             <AppButton style="margin-left: 10px" @click="onLogout">Logout</AppButton>
         </section>
         <section class="existing-posts">
-            <h1>Existing Auctions</h1>
-            <PostList 
+            <h1>Previous Blogs</h1>
+            <PostList
               isAdmin
               :posts="loadedPosts"
             />
