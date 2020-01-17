@@ -1,12 +1,8 @@
-# nuxt-sneaker-auc
-
-> MaxS Nuxt Blog
+# Statically Generated (Search Engine Optimized) Nuxt Streetwear Blog with Signin/Registration using Firebase Realtime Database + Nuxt Animations deployed to Netlify & ZEIT Now
 
 ## deployments (ZEIT Now, Netlify, Surge)
 
-* https://blog-nuxt.ricardojames51.now.sh/
 * https://sneaker-auc.netlify.com/
-* https://streetwear-auc.surge.sh/
 
 ## Build Setup
 
@@ -26,4 +22,3 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
-# nuxt-blog
