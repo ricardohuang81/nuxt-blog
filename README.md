@@ -1,8 +1,9 @@
 # Statically Generated (Search Engine Optimized) Nuxt Streetwear Blog with Signin/Registration using Firebase Realtime Database + Nuxt Animations deployed to Netlify & ZEIT Now
 
-## deployments (ZEIT Now, Netlify, Surge)
+## Deployed to: Netlify, ZEIT Now
 
 * https://sneaker-auc.netlify.com/
+* 
 
 ## Build Setup
 
