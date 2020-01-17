@@ -1,8 +1,10 @@
 # Statically Generated (Search Engine Optimized) Nuxt Streetwear Blog with Signin/Registration using Firebase Realtime Database + Nuxt Animations deployed to Netlify & ZEIT Now
 
+## Create and edit blogs, but data won't persist on this "pre-statically generated" app
+
 ## Deployed to: Netlify, ZEIT Now
 
-* https://sneaker-auc.netlify.com/
+* https://cocky-heisenberg-2739a4.netlify.com/
 * 
 
 ## Build Setup
