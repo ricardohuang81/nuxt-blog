@@ -2,10 +2,9 @@
 
 ## Create and edit blogs, but data won't persist on this "pre-statically generated" app
 
-## Deployed to: Netlify, ZEIT Now
+## Deployed to: Netlify
 
 * https://cocky-heisenberg-2739a4.netlify.com/
-* 
 
 ## Build Setup
 
