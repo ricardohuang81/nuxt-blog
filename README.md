@@ -2,9 +2,7 @@
 
 ## Create and edit blogs, but data won't persist on this "pre-statically generated" app
 
-## Deployed to: Netlify
-
-* https://cocky-heisenberg-2739a4.netlify.com/
+## Deployed to Netlify
 
 ## Build Setup
 
